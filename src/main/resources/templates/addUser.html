@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/head::head(title='MH Optimizer')"></head>
+<body>
+	<div>
+		<div class="container formContainer">
+			<div class="content formContent">
+				<form class="generalForm" th:action="@{/usuarios/createUser}" method="post" th:object="${user}">
+					<label for="nombre">Nombre:</label>
+					<input class="inputForm" type="text" id="nombre" name="nombre" th:field="*{nombre}" required>	
+					<label for="password">Contrase&ntildea:</label>
+					<input class="inputForm" type="password" id="password" name="password"
+						th:field="*{password}" required>
+					<!-- <label for="password">Confirmar contrase&ntildea:</label>
+					<input type="password"id="password" name="password"
+						th:field="*{password}" required>
+						 -->		
+					<label for="email">Correo electr&oacutenico:</label>
+					<input class="inputForm" type="email" id="email" name="email"
+						th:field="*{email}" required>			
+					<h6 class="text-danger" th:if="${error!=null}" th:text="${'Nombre de usuario no disponible'}"></h6>	
+					<input class="formButton" type="submit" value="Crear" />	
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

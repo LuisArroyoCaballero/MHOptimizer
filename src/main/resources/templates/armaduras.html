@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragments/head::head(title='MH Optimizer')"></head>
+<body>
+	<header th:replace="fragments/parts::header"></header>
+	<div class="armorContainer">
+	<div class="content contentArmaduras">
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		 -->
+		<p th:text="${error}" style="color:red"></p>
+		<table>
+			<h1>Armaduras</h1>
+			<thead class="theadArmor">
+			<tr>
+				<th>Set de armadura</th>
+				<th>Monstruo</th>
+				<th>Rareza</th>
+				<th>Casco</th>
+				<th>Pecho</th>
+				<th>Guantes</th>
+				<th>Cintura</th>
+				<th>Grebas</th>
+			</tr>
+			</thead>					
+			<tbody>
+			 <tr th:each="m : ${monstruos}">
+			 	<td th:text="${'Set de '+m.nombre}"></td>
+			 	<td class="tdMonsterImage"><a th:href="@{'/monstruos/detail?monstruo='+${m.getId()}}"><img class="monsterImage" th:src="@{'/img/monsters/'+${m.getNombre()}+'.png'}"></a></td>
+			 	<td class="tdArmorRareza" th:text="${'Rareza '+m.getArmaduras().get(0).getRareza()}"></td>
+			 	
+			 	<!-- <td th:text="${a.getMaterial()[0].getNombre()}"></td> 
+			 	<td><img th:src="@{'/img/'+${a.getParte()}+${a.getRareza()}+'.png'}"></td>
+			 	<td><a th:href="@{'arsenal?codigo='+${a.getId()}}" th:text="${'+'}"></a></td>-->
+			 	<!-- 
+			 	<td>
+			 		<a th:href="@{'/profesores/asignaturas?codigo='+${a.getId()}}" style="text-decoration: none">+</a>
+			 	</td>
+			 	 -->
+			 	 <td class="tdArmor" th:each="a : ${m.getArmaduras()}">
+			 	 	<img th:src="@{'/img/armors/'+${a.getParte()}+${a.getRareza()}+'.png'}">
+			 	 	<a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${a.getId()}}" th:text="${'+'}">
+			 	 	</a>
+			 	 </td>
+			 	 <td>
+			 	 <!-- 
+			 	 <td><img th:src="@{'/img/armors/pecho'+${m.getArmaduras().get(0).getRareza()}+'.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getArmaduras().get(1).getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/armors/guantes'+${m.getArmaduras().get(0).getRareza()}+'.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getArmaduras().get(2).getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/armors/cintura'+${m.getArmaduras().get(0).getRareza()}+'.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getArmaduras().get(3).getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/armors/grebas'+${m.getArmaduras().get(0).getRareza()}+'.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getArmaduras().get(4).getId()}}" th:text="${'+'}"></a></td>
+			 	  -->
+			 </tr>					
+			</tbody>
+		</table>
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		-->
+	</div>
+	</div>
+</body>
+</html>

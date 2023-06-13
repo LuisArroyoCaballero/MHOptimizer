@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragments/head::head(title='MH Optimizer')"></head>
+<body>
+	<header th:replace="fragments/parts::header"></header>
+	<div class="container">
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		 -->
+<!-- 		<p th:text="${error}" style="color:red"></p> -->
+		<div class="content monsterContent" th:each="m : ${monstruos}">
+			<div class="monsterDetail">
+				<h2 th:text="${m.nombre}"></h2>
+				<img class="imgMonsterDetail" th:src="@{'/img/monsters/'+${m.nombre}+'.png'}">
+			</div>
+			<div>
+				<h2>Materiales obtenibles</h2>
+				<div class="matDetail" th:each="mat : ${m.getMateriales()}">
+					<p th:text="${mat.getNombre()}"></p>
+					<p th:text="${mat.getPorcentaje()+'%'}"></p>
+				</div>
+			</div>
+			<div class="mapContainer">
+				<div class="monsterMap">
+					<h2 th:text="${'Mapa del '+m.mapa1}"></h2>
+					<img class="mapImage" th:src="@{'/img/maps/'+${m.mapa1}+'.jpg'}">
+				
+				</div>
+				<div class="monsterMap">
+					<h2 th:text="${'Mapa del '+m.mapa2}"></h2>
+					<img class="mapImage" th:src="@{'/img/maps/'+${m.mapa2}+'.jpg'}">
+				</div>
+			</div>
+			
+		</div>
+		<!-- 
+		<table>
+			
+			<thead>
+			<tr>
+				<th>Set de armadura</th>
+				<th>Rareza</th>
+				<th>Casco</th>
+				<th>Pecho</th>
+				<th>Guantes</th>
+				<th>Cintura</th>
+				<th>Grebas</th>
+			</tr>
+			</thead>					
+			<tbody>
+			 <tr th:each="m : ${monstruos}">
+			 	<td th:text="${'Set de '+m.nombre}"></td>
+			 	<td th:text="${Rareza}"></td>
+			 	 -->
+			 	<!-- <td th:text="${a.getMaterial()[0].getNombre()}"></td> 
+			 	<td><img th:src="@{'/img/'+${a.getParte()}+${a.getRareza()}+'.png'}"></td>
+			 	<td><a th:href="@{'arsenal?codigo='+${a.getId()}}" th:text="${'+'}"></a></td>-->
+			 	<!-- 
+			 	<td>
+			 		<a th:href="@{'/profesores/asignaturas?codigo='+${a.getId()}}" style="text-decoration: none">+</a>
+			 	</td>
+			 	 -->
+			 	 <!-- 
+			 	 <td><img th:src="@{'/img/casco1.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/pecho1.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/guantes1.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/cintura1.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getId()}}" th:text="${'+'}"></a></td>
+			 	 <td><img th:src="@{'/img/grebas1.png'}"><a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${m.getId()}}" th:text="${'+'}"></a></td>
+			 	 
+			 </tr>					
+			</tbody>
+			</table>	
+			 -->
+		
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		-->
+	</div>
+</body>
+</html>

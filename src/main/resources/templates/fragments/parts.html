@@ -1,0 +1,38 @@
+<header th:fragment="header" class="header">
+	<div class="logo">
+		<a aria-current="page" href="/" th:text="${'MHRise Optimizer'}"></a>
+		<div th:text="${session.get(name)}"></div>
+	</div>
+	<div class="navbar">
+		<ul>
+			</li>	
+			<li><a th:href="@{/arsenal}" th:text="${'Arsenal'}"></a>				
+			</li>
+			<!-- <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_USER')"><a th:href="@{/profesores/}" th:text="${'Profesores'}"></a>				
+			</li>
+			<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/}" th:text="${'Asignar asignatura'}"></a>
+			</li>
+			 -->
+			 <li><a th:href="@{/armaduras}" th:text="${'Armaduras'}"></a>	
+			 <li><a th:href="@{/monstruos}" th:text="${'Monstruos'}"></a>
+			 <li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/usuarios}" th:text="${'Usuarios'}"></a>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-account">
+		<ul>
+			<li sec:authorize="!isAuthenticated()">
+				<a class="headButton" th:href="@{/register}" th:text="${'Registrate'}"></a>
+			</li>
+			<li sec:authorize="!isAuthenticated()">
+				<a class="headButton" th:href="@{/login}" th:text="${'Entrar'}"></a>
+			</li>
+			<li sec:authorize="isAuthenticated()" class="nav-item"><a th:href="@{/logout}" th:text="${'Salir'}" class="headButton"></a></li>
+		</ul>
+	</div>
+	<div class="navbar-menu">
+		<i>Menu</i>
+	</div>
+</header>

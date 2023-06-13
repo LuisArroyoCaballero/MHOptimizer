@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragments/head::head(title='MH Optimizer')"></head>
+<body>
+	<header th:replace="fragments/parts::header"></header>
+	<div class="container">
+	<div class="userContent">
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		 -->
+		<p th:text="${error}" style="color:red"></p>
+		<table>
+			<h1>Usuarios</h1>
+			
+			<thead>
+			<tr class="trUser">
+				<th>ID Usuario</th>
+				<th>Nombre</th>
+				<th>Email</th>
+				<th>ROL</th>
+				<th>Activo</th>
+			</tr>
+			</thead>					
+			<tbody>
+			 <tr class="trUser" th:each="u : ${usuarios}">
+			 	<td th:text="${u.id}"></td>
+			 	<td th:text="${u.nombre}"></td>
+			 	<td th:text="${u.email}"></td>
+			 	<td th:text="${u.rol}"></td>
+			 	<td th:text="${u.activo}"></td>
+			 	<td ><a class="editButton" th:href="@{'/usuarios/updateUser?codigo='+${u.getId()}}">Editar</a></td>
+			 	<td><a class="deleteButton" th:href="@{'/usuarios/removeUsuario?codigo='+${u.getId()}}">Borrar</a></td>
+			 	
+			 </tr>					
+			</tbody>
+		</table>
+		<h2><a class="addButton" th:href="@{/usuarios/createUser}">A&ntildeadir usuario</a></h2>
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		-->
+	</div>
+	</div>
+</body>
+</html>

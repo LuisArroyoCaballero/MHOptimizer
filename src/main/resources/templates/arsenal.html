@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragments/head::head(title='MH Optimizer')"></head>
+<body>
+	<header th:replace="fragments/parts::header"></header>
+	<div>
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		 -->
+		<p th:text="${error}" style="color:red"></p>
+		<table>
+			<h1>Arsenal</h1>
+
+			<thead>
+			<tr>
+				<th>ID Usuario</th>
+				<th>Armadura</th>
+			</tr>
+			</thead>					
+			<tbody>
+			 <tr th:each="a : ${arsenal}">
+			 	<td th:text="${a.usuario}"></td>
+			 	<td th:text="${a.armadura.nombre}"></td>
+			 </tr>					
+			</tbody>
+		</table>
+		<!-- <h1><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/profesores/addProfesor}">Añadir Profesor</a></h1>
+		-->
+	</div>
+</body>
+</html>
