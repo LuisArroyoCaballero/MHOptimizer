@@ -22,7 +22,7 @@ Por ello, este proyecto busca proporcionar esa facilidad al usuario, ayudando a 
 
 ## Estructura del Proyecto
 
-docs: Directorio contenedor de la documentación del proyecto.
-src: Directorio contenedor de la aplicación.
+- docs: Directorio contenedor de la documentación del proyecto.
+- src: Directorio contenedor de la aplicación.
 
 
