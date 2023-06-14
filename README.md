@@ -2,9 +2,9 @@
 
 #### Curso Escolar 2022-2023
 #### Autor: [Luis Rafael Arroyo Caballero](https://github.com/LuisArroyoCaballero)
-#### Tutor: [Antonio Gabriel González Casado]
-#### Fecha de Inicio: DD-MM-YYYY
-#### Fecha de Finalización: DD-MM-YYYY
+#### Tutor: [Antonio Gabriel González Casado] (https://github.com/antonio-gabriel-gonzalez-casado)
+#### Fecha de Inicio: 16-03-2023
+#### Fecha de Finalización: 14-06-2023
 
 ## Breve descripción del proyecto
 
@@ -14,25 +14,15 @@ Por ello la aplicación web MHRise Optimizer busca ofrecer a los jugadores una e
 
 
 ## Definir el objetivo de la aplicación
-**Tener una gran idea** o encontrar un punto del mercado al que no se esté dando un producto o servicio es el punto de partida en cada nuevo proyecto. Antes de comenzar debes **definir claramente el propósito y la misión de la aplicación web**:
 
-- **¿Qué va a hacer la aplicación?**
-- **¿Cuál es su atractivo principal?** 
-- **¿Qué problema concreto va a resolver?** 
-- **¿Qué necesidad va a cubrir?**
+A día de hoy, como en la mayoría de videojuegos, tan solo tenemos diferentes Wikis hechas por seguidores de la comunidad las cuales contienen la mayor parte de información del juego.  Sin embargo, estas páginas web no contienen ningún tipo de funcionalidad la cual te ayude en tu aventura. Una de las inconveniencias más importantes de esta entrega es la falta de gestión de armaduras, no teniendo ningún menú en el que registrar tus objetivos a seguir algo bastante incómodo para los jugadores y bastante mencionado en la comunidad.
 
-## Prototipo de la Interfaz del proyecto
+Por ello, este proyecto busca proporcionar esa facilidad al usuario, ayudando a gestionar un arsenal en el que registrará las armaduras que desea conseguir y teniendo información sobre como conseguir los materiales necesarios para la creación de estas armaduras.
 
-En este apartado el alumno insertará la documentación del prototipo del proyecto (sketch, wireframe, mockup y un prototipo HTML y CSS)  que permite al cliente previsualizar el resultado final del producto que se está desarrollando.
-
-....
-....
-....
 
 ## Estructura del Proyecto
 
-En este apartado el alumno explicará el contenido del repositorio y de todas las carpetas relevantes del mismo.
+docs: Directorio contenedor de la documentación del proyecto.
+src: Directorio contenedor de la aplicación.
 
-## Demostración del proyecto
 
-Vídeo demostrativo que contenga una pequeña demostración de la apariencia del proyecto y de aquello que el proyecto puede hacer. (No más de 2 minutos).
