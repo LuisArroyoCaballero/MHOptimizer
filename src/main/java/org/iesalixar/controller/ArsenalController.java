@@ -91,7 +91,7 @@ public class ArsenalController {
 		
 		
 		
-		return "redirect:/armadura";
+		return "redirect:/armaduras";
 		
 	
 	}
