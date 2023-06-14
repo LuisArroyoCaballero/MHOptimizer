@@ -9,7 +9,7 @@ import org.iesalixar.model.Armadura;
 public interface ArmaduraService {
 	
 	public List<Armadura> getAllArmadura();
-	//public Optional<Armadura> findArmaduraById(Long id);
+	public Optional<Armadura> findArmaduraById(Long id);
 	//public Armadura addArmadura(Armadura armadura);
 	//public Armadura getArmaduraByName(String nombre);
 

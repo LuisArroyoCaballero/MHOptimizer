@@ -2,6 +2,7 @@ package org.iesalixar.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.iesalixar.model.Armadura;
 import org.iesalixar.repository.ArmaduraRepository;
@@ -28,5 +29,19 @@ public class ArmaduraServiceImpl implements ArmaduraService {
 		// No he obtenido nada devuelvo una lista vacía (para no devolver nulo)
 		return new ArrayList<Armadura>();
 	}
+
+	@Override
+	public Optional<Armadura> findArmaduraById(Long id) {
+
+		Optional<Armadura> armadura = null;
+		
+		if (id != null) {
+			armadura = armaduraRepo.findById(id);
+		}
+		
+		return armadura;
+	}
+
+	
 
 }

@@ -38,7 +38,7 @@
 			 	 -->
 			 	 <td class="tdArmor" th:each="a : ${m.getArmaduras()}">
 			 	 	<img th:src="@{'/img/armors/'+${a.getParte()}+${a.getRareza()}+'.png'}">
-			 	 	<a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal?codigo='+${a.getId()}}" th:text="${'+'}">
+			 	 	<a sec:authorize="hasRole('ROLE_USER')" th:href="@{'arsenal/add?codigo='+${a.getId()}}" th:text="${'+'}">
 			 	 	</a>
 			 	 </td>
 			 	 <td>
