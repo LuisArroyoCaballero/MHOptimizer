@@ -13,5 +13,6 @@ public interface ArsenalService {
 	//public Optional<Arsenal> findArsenalById(Long id);
 	public List<Arsenal> getAllByIdUsuario(Usuario user);
 	public Arsenal addArsenal(Usuario usuario, Armadura armadura);
+	public void deleteArsenal(Usuario user, Armadura armadura);
 
 }

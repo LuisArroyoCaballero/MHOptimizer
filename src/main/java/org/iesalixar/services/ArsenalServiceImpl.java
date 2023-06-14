@@ -27,20 +27,6 @@ public class ArsenalServiceImpl implements ArsenalService {
 		
 		String user = authentication.getName();
 		
-		//Long userId = user.getId();
-		/*
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println(user);
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		System.out.println("----------------------------------");
-		*/
 		// Obtengo el resultado a través del repositorio
 		List<Arsenal> arsenalDB = arsenalRepo.findAll();
 
@@ -85,6 +71,22 @@ public class ArsenalServiceImpl implements ArsenalService {
 		}
 
 		return null;
+	}
+
+	@Override
+	public void deleteArsenal(Usuario user, Armadura armadura) {
+		
+
+		
+		Arsenal arsenal = new Arsenal();
+		
+		arsenal.setUsuario(user);
+		arsenal.setArmadura(armadura);
+		
+		arsenalRepo.delete(arsenal);
+		
+		
+		
 	}
 
 	

@@ -52,11 +52,7 @@ public class ArsenalController {
 		if (error != null) {
 			model.addAttribute("error", "Error al visualizar el arsenal.");
 		}
-		/*
-		if (profService.addProfesor(profBD)==null) {
-			return "redirect:/profesores/addProfesor?error=Existe&dpto="+prof.getNombre();
-		}
-		*/
+		
 		return "arsenal";
 		
 	}
@@ -92,6 +88,37 @@ public class ArsenalController {
 		
 		
 		return "redirect:/armaduras";
+		
+	
+	}
+	
+	@GetMapping("/remove")
+	public String removeArsenal(@RequestParam(required = false, name = "error") String error, @RequestParam(required = true, name = "codigo") String codigo, Model model) {
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		
+		String userName = authentication.getName();
+		
+		Usuario user = userService.getUsuarioByName(userName);
+		
+		Optional<Armadura> armaduraDB = armaduraService.findArmaduraById(Long.parseLong(codigo));
+		
+	
+		
+		Armadura armadura = new Armadura();
+		
+		armadura.setId(armaduraDB.get().getId());
+		armadura.setNombre(armaduraDB.get().getNombre());
+		armadura.setRareza(armaduraDB.get().getRareza());
+		armadura.setParte(armaduraDB.get().getParte());
+		armadura.setMonstruo(armaduraDB.get().getMonstruo());
+		
+	
+		
+		arsenalService.deleteArsenal(user, armadura);
+		
+		
+		return "redirect:/arsenal";
 		
 	
 	}

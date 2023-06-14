@@ -420,6 +420,24 @@ i {
   	
 }
 
+.deleteArsenal {
+	width: 100%;
+	display: flex;
+  	flex-flow: row wrap;
+  	justify-content: space-between;
+}
+
+.deleteArsenal div{
+	width: 10%;
+	
+}
+
+.deleteArsenal div a{
+	width: 10%;
+	color: black;
+
+}
+
 .arsenalContent div p{
 	text-align: center;
 }

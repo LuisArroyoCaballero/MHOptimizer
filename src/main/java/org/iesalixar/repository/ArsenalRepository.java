@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.iesalixar.model.Arsenal;
 import org.iesalixar.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ArsenalRepository extends JpaRepository<Arsenal,Long> {
 	
 	//public Optional<Arsenal> findById(Long id);

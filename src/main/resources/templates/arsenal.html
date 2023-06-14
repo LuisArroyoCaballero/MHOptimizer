@@ -9,6 +9,12 @@
 <!-- 			<h1>Arsenal</h1> -->
 			<div class="arsenalContent">
 				<div class=" content arsenalInstance" th:each="a : ${arsenal}">
+					<div class="deleteArsenal">
+						<div></div>
+						<div><a th:href="@{'/arsenal/remove?codigo='+${a.armadura.id}}">X</a></div>
+						
+					</div>
+					
 					<img th:src="@{'/img/armors/'+${a.armadura.parte}+${a.armadura.rareza}+'.png'}">
 					<p th:text="${a.armadura.nombre}"></p>
 				</div>

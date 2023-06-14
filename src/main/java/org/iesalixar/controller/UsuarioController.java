@@ -35,11 +35,7 @@ public class UsuarioController {
 		if (error != null) {
 			model.addAttribute("error", "Error al visualizar los usuarios.");
 		}
-		/*
-		if (profService.addProfesor(profBD)==null) {
-			return "redirect:/profesores/addProfesor?error=Existe&dpto="+prof.getNombre();
-		}
-		*/
+		
 		return "usuarios";
 		
 	}
